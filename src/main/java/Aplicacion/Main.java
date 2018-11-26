@@ -66,18 +66,19 @@ public class Main {
 	
 	public static void main( String[] args ) throws Exception{
 		
-		Repositorio repositorio = Repositorio.getInstance();
-		repositorio.importarLog();
-		repositorio.importarDispositivos();
-		repositorio.importarZona();
-		repositorio.importarTransformadores();
-		repositorio.importarClientes();		
-		
+//		Repositorio repositorio = Repositorio.getInstance();
+//		repositorio.importarLog();
+//		repositorio.importarDispositivos();
+//		repositorio.importarZona();
+//		repositorio.importarTransformadores();
+//		repositorio.importarClientes();		
+//		
 //		DispositivoDAO dao = new DispositivoDAO();
 //		dao.cargaInicial();
 
-
-		port(8080);
+		port(getHerokuAssignedPort());
+		
+//		port(8080);
         staticFiles.location("/templates");
         staticFiles.expireTime(600L);
         enableDebugScreen();
@@ -120,4 +121,12 @@ public class Main {
         
 	
 	}
+	
+	static int getHerokuAssignedPort() {
+        ProcessBuilder processBuilder = new ProcessBuilder();
+        if (processBuilder.environment().get("PORT") != null) {
+            return Integer.parseInt(processBuilder.environment().get("PORT"));
+        }
+        return 4567; //return default port if heroku-port isn't set (i.e. on localhost)
+    }
 }

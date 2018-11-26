@@ -30,9 +30,13 @@
         
          
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" /> 
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/prueba" /> 
+           <!--  <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/prueba" />
             <property name="hibernate.connection.username" value="root" /> 
-            <property name="hibernate.connection.password" value="tp" /> 
+            <property name="hibernate.connection.password" value="arse1957" /> -->
+            <property name="hibernate.connection.url" value="jdbc:mysql://h2cwrn74535xdazj.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/zzxykhoz4ognqxcj" />  
+            <property name="hibernate.connection.username" value="rl170umx7v642djw" /> 
+            <property name="hibernate.connection.password" value="xzjglcslsrzb9rmu" />
+           
 
 <!-- 
             <property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver" /> 
